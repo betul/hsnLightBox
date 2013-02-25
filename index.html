@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>hsnLightBox</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript" language="javascript" src="jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="hsnLightBox.js"></script>
+<script type="text/javascript">
+$(function(){
+    $('.inline').hsnLightBox({
+		opacity : 0.5
+	});
+	$('.html').hsnLightBox({
+		opacity : 0.5,
+		icerik : '<div style="color:red">Hello Hilal !!!</div>',
+		nesneGenislik : 550,
+		nesneYukseklik :250
+	});
+	$('.resim').hsnLightBox({
+		opacity : 0.5
+	});
+	$('a[rel=galeri]').hsnLightBox({
+		opacity : 0.5,
+		kapatButonuGoster : true
+	});
+	$('.ajax').hsnLightBox({
+		opacity : 0.5,
+		ajaxVeri: {Veri:'hasan'}
+	});
+	$('.swf').hsnLightBox({
+		nesneGenislik		:	450,
+		nesneYukseklik		:	340
+	});
+	$('.iframe').hsnLightBox({
+		nesneTipi : 'iframe',
+		nesneGenislik		:	1150,
+		nesneYukseklik		:	700
+	});
+	
+});
+
+</script>
+<style>
+a{display:block; margin:0 10px}
+.fl_left{float:left;}
+</style>
+</head>
+<body style="margin:0">
+<a href="#deneme" class="inline">inline</a>
+<a href="#" class="html">html</a>
+<a href="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-prn1/530921_462753843766980_1698471418_n.jpg" rel="hasan" class="resim">Resim</a>
+<a href="ajax.php" class="ajax">Ajax</a>
+<a class="swf" href="http://inciswf.com/1293187850.swf">Swf</a>
+<a class="iframe" href="http://www.hasanaydogdu.com">IFrame</a>
+<div>
+<a href="ornekler/1_b.jpg" rel="galeri" class="fl_left"><img src="ornekler/1_b.jpg" width="50" height="50" /></a>
+<a href="ornekler/8682063.jpg" rel="galeri" class="fl_left"><img src="ornekler/8682063.jpg" width="50" height="50" /></a>
+<a href="ornekler/asdasd.jpg" rel="galeri" class="fl_left"><img src="ornekler/asdasd.jpg" width="50" height="50" /></a>
+<a href="ornekler/home.jpg" rel="galeri" class="fl_left"><img src="ornekler/home.jpg" width="50" height="50" /></a>
+</div>
+<div style="display: none;">
+<div style="height:100px" id="deneme">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+</div>
+</body>
+</html>
