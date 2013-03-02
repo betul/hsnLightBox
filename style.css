@@ -1,20 +1,9 @@
 @charset "utf-8";
 /* CSS Document */
-/* CSS reset */
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {margin:0; padding:0;}
-html,body {margin:0; padding:0;}
-table {border-collapse:collapse; border-spacing:0;}
-fieldset,img {border:0;}
-input{border:1px solid #b0b0b0; padding:3px 5px 4px; color:#979797; width:190px;}
-address,caption,cite,code,dfn,th,var {font-style:normal; font-weight:normal;}
-ol,ul {list-style:none;}
-caption,th {text-align:left;}
-h1,h2,h3,h4,h5,h6 {font-size:100%; font-weight:normal;}
-q:before,q:after {content:'';}
-abbr,acronym {border:0;}
 #hsnLightBox{width:100%; height:100%; position:fixed; z-index:999; top:0; left:0; display:none; cursor:pointer;}
 #hsnLightBox-icerik-cerceve{background:white; display:none; border-radius:5px; z-index:9999; position:relative;}
-#hsnLightBox-icerik{position:relative; overflow:auto;}
+#hsnLightBox-icerik{position:relative; overflow:auto; padding: 0; outline: none;}
+#hsnLightBox-icerik img{width: 100%; height: 100%; padding: 0; margin: 0; border: none; outline: none; line-height: 0; vertical-align: top;}
 #hsnLightBox-kapat{position:absolute; display:none; top:-15px; right:-15px; width:31px; height:31px; z-index:99999; cursor:pointer; background:url('./img/icons.png') 0px -71px no-repeat}
 #hsnLightBox-Tmp{display:none; border:0; margin:0; padding:0; overflow:auto;}
 #hsnLightBox-ileri,#hsnLightBox-geri{position:absolute; display:none; height:100%; margin:0; top:0; width:30%; z-index:99999; background:transparent url('./img/transparent.gif');}
