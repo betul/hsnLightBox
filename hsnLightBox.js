@@ -200,6 +200,7 @@
 		error : function(XMLHttpRequest, textStatus, errorThrown) {
 			if ( XMLHttpRequest.status > 0 ) {
 				if(XMLHttpRequest.status === 404){hataMesaji='Sayfa Bulunamadı !';}
+				console.log(XMLHttpRequest.status);
 				error();
 			}
 		},
