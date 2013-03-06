@@ -1,7 +1,20 @@
-// JavaScript Document
+/*!
+ * hsnLightBox - jQuery Eklentisi
+ * version: 1.0 (06 Mart 2013, Salı)
+ * @jQuery v1.6 ve üstü ile çalışmaktadır.
+ *
+ * Örneklere http://hsnayd.github.com/hsnLightBox/ adresinden  ulaşabilirsiniz.
+ * Projeye Adresi : https://github.com/hsnayd/hsnLightBox 
+ * Lisans: MIT ve GPL
+ * 	* http://www.opensource.org/licenses/mit-license.php
+ *  * http://www.gnu.org/licenses/gpl.txt
+ *
+ * Copyright 2012 Hasan Aydoğdu - http://www.hasanaydogdu.com
+ *
+ */
 (function($){
 	//Degişkenleri Ayarla
-	var imgRegExp = /\.(jpg|gif|png|bmp|jpeg)(.*)?$/i, swfRegExp = /[^\.]\.(swf)\s*$/i,seciliNesne = new Image(),ayarlar = {},obje,pencere={},nesne = {},galeri={},gal_res=[],rel,tmp,kaplama,yukleniyor,ileri,geri,kapat,cerceve,icerik,hataMesaji,ekran = {},
+	var imgRegExp = /\.(jpg|gif|png|bmp|jpeg)(.*)?$/i, swfRegExp = /[^\.]\.(swf)\s*$/i,seciliNesne = new Image(),ayarlar = {},obje,pencere={},nesne = {},galeri={},gal_res=[],rel,tmp,kaplama,yukleniyor,ileri,geri,kapat,cerceve,icerik,hataMesaji,ekran = {},IE =  navigator.userAgent.match(/msie/i),
 	//Ekran Boyutlarını Alalım
 	ekran_boyutlari = function(){
 		ekran = {
@@ -34,7 +47,6 @@
 	},
 	icerik_olustur = function(){
 		ekran_boyutlari();
-		console.log(ekran.genislik)
 		galeri.durum = false;
 		switch (nesne.tipi) {
 			case 'image' :
@@ -46,7 +58,7 @@
                 });
 				if(gal_res.length > 1){
 					galeri.durum = true;
-					nesne.index = $(obje).index();
+					nesne.index = $('a[rel='+rel+']').index(obje);
 				}else{galeri.durum = false;}
 			}else{galeri.durum = false;}
 			seciliNesne = new Image();
@@ -76,7 +88,7 @@
 			nesne_islemleri();
 			break;
 			case 'iframe':
-			nesne.icerik = '<iframe id="hsnLightBox-iframe" style="width:'+ayarlar.nesneGenislik+'px; height:'+ayarlar.nesneYukseklik+'px;" frameborder="0" hspace="0" '+($.browser.msie ? 'allowtransparency="true""' : '')+' src="'+nesne.hedef+'"></iframe>';
+			nesne.icerik = '<iframe id="hsnLightBox-iframe" style="width:'+ayarlar.nesneGenislik+'px; height:'+ayarlar.nesneYukseklik+'px;" frameborder="0" vspace="0" hspace="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen'+(IE ? 'allowtransparency="true""' : '')+' src="'+nesne.hedef+'"></iframe>';
 			nesne_islemleri();
 			break;
 			}
@@ -99,9 +111,8 @@
 	  tmp.empty();
 	  ekran_kontrol();
 	  nesne.icerik = '<img src="'+nesne.hedef+'" width="'+nesne.genislik+'" height="'+nesne.yukseklik+'"/>';
-	  pozisyon_belirle();
-	  icerik.is(":visible") ? resim_degistir() : pencere_ac();
-			
+	  pozisyon_belirle()
+	  icerik.is(":visible") ? resim_degistir() : pencere_ac();	
 	},
 	galeri_islemleri = function(){
 		galeri.ileri = gal_res[nesne.index+1];
@@ -315,15 +326,3 @@
         $.hsnLightBox.baslangic();
     });
 })(jQuery);
-
-/*##########################*/
-/*$('#hsnLightBox,#hsnLightBox-kapa').live('click',function(){
-	 lightbox_kapa();
-    });
-function lightbox_kapa(){//lightbox kapatma fonks.
-	$('#hsnLightBox').fadeOut('slow').remove();
-    $('#hsnLightBox-icerik-cerceve').fadeOut('slow').remove();
-}*/
-/*$(document).bind('keydown',function(e){//Lightbox esc ye basinca kapatma fonk.
-	if(e.keyCode==27){lightbox_kapa();}
-});*/
