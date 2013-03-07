@@ -150,6 +150,7 @@
 			'padding': ayarlar.padding
 		});
 		$(icerik).css('height',nesne.yukseklik+'px');
+		if(nesne.tipi!=='image'){$(icerik).css('overflow','auto')}
 		if(galeri.durum===true && ayarlar.yonButonuGoster){yonlendirmeler();}
 		$(cerceve).fadeIn('slow');
 		icerik_yukle();	
