@@ -14,7 +14,7 @@
  */
 (function($){
 	//Degişkenleri Ayarla
-	var imgRegExp = /\.(jpg|gif|png|bmp|jpeg)(.*)?$/i, swfRegExp = /[^\.]\.(swf)\s*$/i,seciliNesne = new Image(),ayarlar = {},obje,pencere={},nesne = {},galeri={},gal_res=[],rel,tmp,kaplama,yukleniyor,ileri,geri,kapat,cerceve,icerik,hataMesaji,ekran = {},IE =  navigator.userAgent.match(/msie/i),
+	var imgRegExp = /\.(jpg|gif|png|bmp|jpeg)(.*)?$/i, swfRegExp = /[^\.]\.(swf)\s*$/i,seciliNesne = new Image(),ayarlar = {},obje,pencere={},nesne = {},galeri={},gal_res=[],rel,tmp,kaplama,yukleniyor,ileri,geri,kapat,cerceve,icerik,hataKodu,ekran = {},IE =  navigator.userAgent.match(/msie/i),
 	//Ekran Boyutlarını Alalım
 	ekran_boyutlari = function(){
 		ekran = {
@@ -200,7 +200,7 @@
 		data:ayarlar.ajaxVeri || {},
 		error : function(XMLHttpRequest, textStatus, errorThrown) {
 			if ( XMLHttpRequest.status > 0 ) {
-				if(XMLHttpRequest.status === 404){hataMesaji='Sayfa Bulunamadı !';}
+				hataKodu = XMLHttpRequest.status;
 				console.log(XMLHttpRequest.status);
 				error();
 			}
@@ -212,7 +212,7 @@
 	});
 	},
 	error = function(){
-		nesne.icerik = hataMesaji ? hataMesaji : ayarlar.hataMesaji;
+		nesne.icerik = (hataKodu === 404) ? ayarlar.hataMesaji404 : ayarlar.hataMesaji+hataKodu;
 		nesne_islemleri();
 	},
 	yonlendirmeler = function(){
@@ -247,7 +247,8 @@
 				nesneGenislik		:	560,
 				nesneYukseklik		:	340,
 				ajaxVeri			: 	null,
-				hataMesaji			: 	'Bir hata oluştu !',
+				hataMesaji404		:	'Sayfa bulunamadı !',
+				hataMesaji			: 	'Bir hata oluştu ! Hata kodu : ',
 				animasyonSuresi		:	500,
 				padding				:	10,
 				swf					: 	{wmode: 'transparent'},
@@ -259,6 +260,7 @@
 		  });	
 	}//Fonksiyon bitis tagı
 	$.hsnLightBox = function(){
+		/* Bu bölüm geliştirilecek !*/
 		console.log('Lan')
 	}
 	$.hsnLightBox.deneme = function(){
