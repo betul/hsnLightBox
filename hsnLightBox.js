@@ -198,6 +198,7 @@
 		type:'POST',
 		url:nesne.hedef,
 		data:ayarlar.ajaxVeri || {},
+		dataType:ayarlar.ajaxDataType,
 		error : function(XMLHttpRequest, textStatus, errorThrown) {
 			if ( XMLHttpRequest.status > 0 ) {
 				hataKodu = XMLHttpRequest.status;
@@ -247,6 +248,7 @@
 				nesneGenislik		:	560,
 				nesneYukseklik		:	340,
 				ajaxVeri			: 	null,
+				ajaxDataType		:	'html',
 				hataMesaji404		:	'Sayfa bulunamadı !',
 				hataMesaji			: 	'Bir hata oluştu ! Hata kodu : ',
 				animasyonSuresi		:	500,
