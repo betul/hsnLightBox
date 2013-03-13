@@ -77,7 +77,7 @@
 			ajax_hazirla();
 			break;
 			case 'swf':
-			var flash = '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="' + ayarlar.nesneGenislik + '" height="' + ayarlar.nesneYukseklik + '"><param name="movie" value="' + nesne.hedef + '"></param>',
+			var flash = '<object id="hsnLightBox-swf" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="' + ayarlar.nesneGenislik + '" height="' + ayarlar.nesneYukseklik + '"><param name="movie" value="' + nesne.hedef + '"></param>',
 			emb = '' ;
 				$.each(ayarlar.swf, function(ozellik,deger){
 					flash += '<param name="' + ozellik + '" value="' + deger + '"></param>';

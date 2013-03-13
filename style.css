@@ -1,18 +1,18 @@
-@charset "utf-8";
-/* CSS Document */
 #hsnLightBox{width:100%; height:100%; position:fixed; z-index:999; top:0; left:0; display:none; cursor:pointer;}
 #hsnLightBox-icerik-cerceve{background:white; display:none; border-radius:5px; z-index:9999; position:relative;}
-#hsnLightBox-icerik{position:relative; overflow:auto; padding: 0; outline: none;}
-#hsnLightBox-icerik img{width: 100%; height: 100%; padding: 0; margin: 0; border: none; outline: none; line-height: 0; vertical-align: top;}
-#hsnLightBox-kapat{position:absolute; display:none; top:-15px; right:-15px; width:31px; height:31px; z-index:99999; cursor:pointer; background:url('./img/icons.png') 0px -71px no-repeat}
+#hsnLightBox-icerik{position:relative; padding: 0; outline: none;}
+#hsnLightBox-icerik img{width: 100%; height: 100%; padding: 0; margin: 0; border: none; outline: none; line-height: 0; vertical-align: top; box-shadow:none;}
+#hsnLightBox-kapat{position:absolute; display:none; top:-15px; right:-15px; width:31px; height:31px; z-index:99999; cursor:pointer; background:url('icons.png') 0px -71px no-repeat}
 #hsnLightBox-Tmp{display:none; border:0; margin:0; padding:0; overflow:auto;}
-#hsnLightBox-ileri,#hsnLightBox-geri{position:absolute; display:none; height:100%; margin:0; top:0; width:30%; z-index:99999; background:transparent url('./img/transparent.gif');}
+#hsnLightBox-ileri,#hsnLightBox-geri{position:absolute; display:none; height:100%; margin:0; top:0; width:30%; z-index:99999; background:transparent url('transparent.gif');}
 #hsnLightBox-ileri{right:0;}
 #hsnLightBox-geri{left:0;}
-.hsnLightBox-geri-icon,.hsnLightBox-ileri-icon{background-image:url('./img/icons.png'); background-repeat:no-repeat; width:31px; height:31px; position:absolute; top:45%; display:none;}
+.hsnLightBox-geri-icon,.hsnLightBox-ileri-icon{background-image:url('icons.png'); background-repeat:no-repeat; width:31px; height:31px; position:absolute; top:45%; display:none;}
 .hsnLightBox-geri-icon{background-position:0px -36px; left:25%}
 .hsnLightBox-ileri-icon{background-position:0px 0px; right:25%}
 #hsnLightBox-ileri:hover .hsnLightBox-ileri-icon{display:block;}
 #hsnLightBox-geri:hover .hsnLightBox-geri-icon{display:block;}
-#hsnLightBox-loading{display:none; position:fixed; width:50px; height:50px; background:url('./img/loader.gif') no-repeat; top:50%; left:50%; margin-top:-25px; margin-left:-25px; z-index:99999; border-radius:5px; overflow:hidden;}
-#hsnLightBox-iframe{width: 100%; height: 100%; border: none; display: block;}
+#hsnLightBox-loading{display:none; position:fixed; width:50px; height:50px; background:url('loader.gif') no-repeat; top:50%; left:50%; margin-top:-25px; margin-left:-25px; z-index:99999; border-radius:5px; overflow:hidden;}
+#hsnLightBox-iframe{width: 100%; height: 100%; display: block;}
+#hsnLightBox-icerik-cerceve a{outline:none;}
+#hsnLightBox-swf,#hsnLightBox-iframe{border: none; margin: 0; outline: none; padding: 0; vertical-align: top;}
