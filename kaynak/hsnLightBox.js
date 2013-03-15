@@ -95,8 +95,8 @@
 	},
 	nesne_islemleri = function(){
 		tmp.html(nesne.icerik);
-		nesne.genislik = tmp.width();
-		nesne.yukseklik = tmp.height();
+		nesne.genislik = ayarlar.otoBoyutlandir ? tmp.width() : ayarlar.nesneGenislik;
+		nesne.yukseklik = ayarlar.otoBoyutlandir ? tmp.height() : ayarlar.nesneYukseklik;
 		tmp.find('div').css({'width':'','height':''});
 		nesne.icerik = tmp.html();
 		tmp.empty();
@@ -106,8 +106,8 @@
 	},
 	resim_islemleri = function(){
 	  if(galeri.durum===true){galeri_islemleri();}
-	  nesne.genislik = seciliNesne.width;
-	  nesne.yukseklik = seciliNesne.height;
+	  nesne.genislik = ayarlar.otoBoyutlandir ? seciliNesne.width : ayarlar.nesneGenislik;
+	  nesne.yukseklik = ayarlar.otoBoyutlandir ? seciliNesne.height : ayarlar.nesneYukseklik;
 	  tmp.empty();
 	  ekran_kontrol();
 	  nesne.icerik = '<img src="'+nesne.hedef+'" width="'+nesne.genislik+'" height="'+nesne.yukseklik+'"/>';
@@ -247,6 +247,7 @@
 				nesneTipi 			: 	false,
 				nesneGenislik		:	560,
 				nesneYukseklik		:	340,
+				otoBoyutlandir		:	true,
 				ajaxVeri			: 	null,
 				ajaxDataType		:	'html',
 				hataMesaji404		:	'Sayfa bulunamadı !',
