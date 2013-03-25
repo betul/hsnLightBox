@@ -234,40 +234,49 @@
 				$.hsnLightBox.ileri();
 			}
 		});
+	},parametreler = {
+		saydamlik 			:	0.5,
+		apRengi 			:	'#000',
+		icerik				:	null,
+		nesneTipi 			: 	false,
+		nesneGenislik		:	560,
+		nesneYukseklik		:	340,
+		otoBoyutlandir		:	true,
+		ajaxVeri			: 	null,
+		ajaxDataType		:	'html',
+		hataMesaji404		:	'Sayfa bulunamadı !',
+		hataMesaji			: 	'Bir hata oluştu ! Hata kodu : ',
+		animasyonSuresi		:	500,
+		padding				:	10,
+		swf					: 	{wmode: 'transparent'},
+		kapatButonuGoster	:	true,
+		yonButonuGoster		: 	true
 	}
 	/*#######################################*/
 	$.fn.hsnLightBox = function(ayar){
 		 $(this).click(function(e) {
 			e.preventDefault();
 			//Ayarları Alalım
-			ayarlar = $.extend({ 
-				saydamlik 			:	0.5,
-				apRengi 			:	'#000',
-				icerik				:	null,
-				nesneTipi 			: 	false,
-				nesneGenislik		:	560,
-				nesneYukseklik		:	340,
-				otoBoyutlandir		:	true,
-				ajaxVeri			: 	null,
-				ajaxDataType		:	'html',
-				hataMesaji404		:	'Sayfa bulunamadı !',
-				hataMesaji			: 	'Bir hata oluştu ! Hata kodu : ',
-				animasyonSuresi		:	500,
-				padding				:	10,
-				swf					: 	{wmode: 'transparent'},
-				kapatButonuGoster	:	true,
-				yonButonuGoster		: 	true
-			},ayar);
+			ayarlar = $.extend(parametreler,ayar);
 			obje = this;
 			basla();
 		  });	
 	}//Fonksiyon bitis tagı
-	$.hsnLightBox = function(){
-		/* Bu bölüm geliştirilecek !*/
-		console.log('Lan')
-	}
-	$.hsnLightBox.deneme = function(){
-		 return this.get(0).scrollWidth > this.innerWidth();
+	$.hsnLightBox = function(objeVeri,ayar){
+		if(!objeVeri) return;
+		ayarlar = $.extend(parametreler,ayar);
+		var $elmn;
+		if(!objeVeri.hedef){objeVeri.hedef = '#'}
+		if(objeVeri.rel){
+			$elmn = $('a[href="'+objeVeri.hedef+'"][rel="'+objeVeri.rel+'"]');
+		}else{
+			$elmn = $('a[href="'+objeVeri.hedef+'"]');	
+		}
+		if($elmn.length===0){
+			$elmn = $('<a></a>').attr('href',objeVeri.hedef); 	
+		}
+		obje = $elmn
+		basla();
 	}
 	$.hsnLightBox.resize = function(){
 		ekran_boyutlari();
