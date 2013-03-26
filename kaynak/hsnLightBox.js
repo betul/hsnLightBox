@@ -257,7 +257,7 @@
 		 $(this).click(function(e) {
 			e.preventDefault();
 			//Ayarları Alalım
-			ayarlar = $.extend(parametreler,ayar);
+			ayarlar = $.extend({},parametreler,ayar);
 			obje = this;
 			basla();
 		  });	
