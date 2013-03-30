@@ -3,7 +3,7 @@
  * version: 1.0 (06 Mart 2013, Salı)
  * @jQuery v1.6 ve üstü ile çalışmaktadır.
  *
- * Örneklere http://hsnayd.github.com/hsnLightBox/ adresinden  ulaşabilirsiniz.
+ * Örneklere http://lab.hasanaydogdu.com/hsnLightBox/ adresinden  ulaşabilirsiniz.
  * Projeye Adresi : https://github.com/hsnayd/hsnLightBox 
  * Lisans: MIT ve GPL
  * 	* http://www.opensource.org/licenses/mit-license.php
